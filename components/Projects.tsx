@@ -87,6 +87,57 @@ const FitVisual = (
   </div>
 );
 
+const NexoraVisual = (
+  <div className="flex h-[74%] w-[80%] flex-col gap-2.5">
+    {/* Stat cards row */}
+    <div className="flex gap-2">
+      {[
+        { label: "Leads", value: "128", color: "text-indigo-300" },
+        { label: "Pipeline", value: "$84k", color: "text-cyan" },
+        { label: "Won", value: "32", color: "text-emerald-300" },
+      ].map((s) => (
+        <div
+          key={s.label}
+          className="flex-1 rounded-md border border-white/10 bg-white/5 px-2 py-1.5"
+        >
+          <div className={`font-mono text-[0.7rem] font-semibold ${s.color}`}>
+            {s.value}
+          </div>
+          <div className="mt-0.5 h-1 w-3/4 rounded bg-white/10" />
+        </div>
+      ))}
+    </div>
+
+    {/* Pipeline funnel bar */}
+    <div className="flex h-3 w-full overflow-hidden rounded-full">
+      <div className="w-[35%] bg-indigo-500" />
+      <div className="w-[28%] bg-indigo-400" />
+      <div className="w-[20%] bg-cyan" />
+      <div className="w-[17%] bg-emerald-400" />
+    </div>
+    <div className="flex justify-between font-mono text-[0.55rem] text-muted">
+      <span>New</span>
+      <span>Qualified</span>
+      <span>Contacted</span>
+      <span>Won</span>
+    </div>
+
+    {/* Trend line */}
+    <div className="mt-1 flex-1 rounded-md border border-white/10 bg-white/5 p-2">
+      <svg viewBox="0 0 200 60" className="h-full w-full" fill="none">
+        <polyline
+          points="0,45 30,38 60,42 90,25 120,30 150,12 180,18 200,8"
+          stroke="#818CF8"
+          strokeWidth={2.5}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <circle cx={200} cy={8} r={3} fill="#22D3EE" />
+      </svg>
+    </div>
+  </div>
+);
+
 const PROJECTS: Project[] = [
   {
     name: "MERN College ERP",
@@ -134,6 +185,16 @@ const PROJECTS: Project[] = [
     visualBg: "bg-[radial-gradient(120%_120%_at_20%_100%,rgba(249,115,22,0.25),#171325_60%)]",
     visual: FitVisual,
   },
+  {
+  name: "Nexora — AI CRM Dashboard",
+  date: "2026",
+  desc: "A full-stack AI-powered CRM for managing sales pipelines, contacts, tasks, notes, and follow-ups. React 19 + Vite frontend with drag-and-drop pipeline boards and analytics charts, Node.js/Express + MongoDB backend, and Gemini-powered lead summaries, email drafting, and sales insights.",
+  tags: ["React", "Node.js", "Express", "MongoDB", "JWT", "Gemini AI", "Recharts"],
+  link: "https://ai-saas-crm-dashboard.vercel.app/",
+  linkColor: "text-indigo-400",
+  visualBg: "bg-[radial-gradient(120%_120%_at_80%_100%,rgba(99,102,241,0.25),#171325_60%)]",
+  visual: NexoraVisual,
+},
 ];
 
 export default function Projects() {
@@ -144,7 +205,7 @@ export default function Projects() {
           Selected work
         </p>
         <h2 className="mb-7 max-w-[24ch] font-display text-[clamp(1.6rem,3.4vw,2.2rem)] font-semibold">
-          Five products, five very different problems
+          {PROJECTS.length} products, {PROJECTS.length} very different problems
         </h2>
 
         {PROJECTS.map((p, i) => (

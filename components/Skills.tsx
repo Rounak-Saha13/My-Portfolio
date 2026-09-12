@@ -8,16 +8,29 @@ const GROUPS = [
     items: [
       "React",
       "Next.js",
+      "Vite",
       "React Router",
       "Material UI",
       "Bootstrap",
       "Styled Components",
+      "Recharts",
+      "DnD Kit",
+      "Axios",
       "HTML5 / CSS3",
     ],
   },
   {
     label: "Backend",
-    items: ["Node.js", "Express.js", "Flask", "REST APIs", "JWT", "Middleware"],
+    items: [
+      "Node.js",
+      "Express.js",
+      "Flask",
+      "REST APIs",
+      "JWT",
+      "Middleware",
+      "Mongoose",
+      "bcrypt",
+    ],
   },
   {
     label: "Data & cloud",
@@ -33,6 +46,10 @@ const GROUPS = [
       "Render",
       "Docker",
     ],
+  },
+  {
+    label: "AI integration",
+    items: ["Gemini AI", "OpenAI API", "Pollinations AI"],
   },
 ];
 

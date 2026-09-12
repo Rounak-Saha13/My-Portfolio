@@ -12,7 +12,7 @@ export default function About() {
               </span>
             </div>
             <div>
-              <b className="cyan-text block font-display text-2xl">3 + </b>
+              <b className="cyan-text block font-display text-2xl"> 5 </b>
               <span className="text-sm text-muted">
                 Shipped full-stack projects
               </span>
